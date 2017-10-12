@@ -9,7 +9,7 @@ module ParallelTests
       class << self
         def run_tests(test_files, process_number, num_processes, options)
           exe = executable # expensive, so we cache
-          cmd = [exe, options[:test_options], color, spec_opts, *test_files].compact.join(" ")
+          cmd = [exe, options[:test_options], spec_opts, *test_files].compact.join(" ")
           execute_command(cmd, process_number, num_processes, options)
         end
 
